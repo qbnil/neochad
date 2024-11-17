@@ -12,6 +12,9 @@ return {
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "j-hui/fidget.nvim",
+    },
     config = function()
       require "configs.lspconfig"
     end,
@@ -22,7 +25,8 @@ return {
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc",
-        "html", "css"
+        "html", "css",  "javascript",
+        "python"
       },
     },
   },
@@ -65,5 +69,14 @@ return {
     config = function()
       require "configs.fugitive"
     end
-  }
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    enabled = false,
+    opts = {
+      -- Enable Netrw to make the 'gx' shortcut work
+      disable_netrw = false,
+      hijack_netrw = false,
+    }
+  },
 }

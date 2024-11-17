@@ -26,3 +26,4 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("t", "<A-w>", [[<C-\><C-n><C-w>w]], { silent = true })
 vim.keymap.set({ "n", "v" }, "<A-w>", [[<C-w>]], { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>q", "<cmd>:q<CR>", { silent = true })
+vim.keymap.set("n", "<A-r>", [[<C-^>]])

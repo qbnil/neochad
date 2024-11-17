@@ -1,10 +1,13 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
+-- call fidget setup  
+require("fidget").setup({})
+
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "rust_analyzer" }
+local servers = { "html", "cssls", "rust_analyzer", "pyright", "denols" }
 local nvlsp = require "nvchad.configs.lspconfig"
 local util = require "lspconfig/util"
 
@@ -32,8 +35,14 @@ lspconfig.rust_analyzer.setup {
     }
   }
 }
+
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+
+-- Keymaps
+vim.keymap.set("n", "<leader>dp", function()
+  vim.diagnostic.open_float({ scope = "line" })
+end, {})

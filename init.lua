@@ -34,6 +34,14 @@ dofile(vim.g.base46_cache .. "statusline")
 require "options"
 require "nvchad.autocmds"
 
+-- other autocmds:
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup('term_default_size', { clear = true }),
+  callback = function ()
+    vim.cmd[[resize5]]
+  end
+})
+
 vim.schedule(function()
   require "mappings"
 end)
