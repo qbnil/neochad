@@ -7,7 +7,7 @@ require("fidget").setup({})
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "rust_analyzer", "pyright", "denols" }
+local servers = { "html", "cssls", "rust_analyzer", "pyright", "denols", "jdtls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 local util = require "lspconfig/util"
 
